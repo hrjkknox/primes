@@ -7,7 +7,7 @@ def isPrime(n):
 	if n < 9:
 		return True
 	if n % 3 == 0:
-		return True
+		return False
 	# Since all primes > 3 are of the form 6n±1,
 	# start with i = 5 (which is prime) and test
 	# f, f+2 for being prime, then loop by 6
