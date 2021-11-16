@@ -23,3 +23,10 @@ def isPrime(n):
 	
 	return True
 
+# Returns a list of prime numbers fom min to max (inclusive)
+def getPrimesFromRange(min, max):
+	output = []
+	for i in range(min, max+1):
+		if isPrime(i):
+			output.append(i)
+	return output
