@@ -17,17 +17,17 @@ int isPrime(int n) {
 		return 0;
 	}
 
-	double decimalHalfway = sqrt((double) n);
-	int halfway = (int) (decimalHalfway + 0.5);
+	double decimalh = sqrt((double) n);
+	int h = (int) (decimalh + 0.5);
 
 	int i = 5;
-	while (i <= halfway)
+	while (i <= h)
 	{
 		if ((n % i) == 0) {
 			return 0;
 		}
 		if (n % (i + 2) == 0) {
-			return False
+			return 0;
 		}
 
 		i += 6
