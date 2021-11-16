@@ -1,7 +1,38 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+/* Returns 1 if an integer is prime, 0 if not */
+int isPrime(int n) {
 
-	return 0;
+	if ((n == 2) || (n == 3)) {
+		return 1;
+	}
+	if ((n < 2) || (n % 2 == 0)) {
+		return 0;
+	}
+	if (n < 9) {
+		return 1;
+	}
+	if (n % 3 == 0) {
+		return 0;
+	}
+
+	double decimalHalfway = sqrt((double) n);
+	int halfway = (int) (decimalHalfway + 0.5);
+
+	int i = 5;
+	while (i <= halfway)
+	{
+		if ((n % i) == 0) {
+			return 0;
+		}
+		if (n % (i + 2) == 0) {
+			return False
+		}
+
+		i += 6
+	}
+
+	return 1;
+	
 }
