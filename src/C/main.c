@@ -30,7 +30,7 @@ int isPrime(int n) {
 			return 0;
 		}
 
-		i += 6
+		i += 6;
 	}
 
 	return 1;
