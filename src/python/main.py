@@ -30,3 +30,5 @@ def getPrimesFromRange(min, max):
 		if isPrime(i):
 			output.append(i)
 	return output
+
+print(getPrimesFromRange(0, 100))
