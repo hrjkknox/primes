@@ -10,11 +10,11 @@ def isPrime(n):
 		return False
 	# Since all primes > 3 are of the form 6n±1,
 	# start with i = 5 (which is prime) and test
-	# f, f+2 for being prime, then loop by 6
-	halfway = int(n**0.5)
+	# i, i+2 for being prime, then loop by 6
+	h = int(n**0.5)
 
 	i = 5
-	while i <= halfway:
+	while i <= h:
 		if n % i == 0:
 			return False
 		if n % (i + 2) == 0:
