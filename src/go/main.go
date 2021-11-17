@@ -43,3 +43,12 @@ func isPrime(n int) bool {
 }
 
 
+func getPrimesFromRange(min int, max int) []int {
+	var output []int
+	for i := min; i <= max; i++ {
+		if isPrime(i) {
+			output = append(output, i)
+		}
+	}
+	return output
+}
