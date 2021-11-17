@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 /* Returns 1 if an integer is prime, 0 if not */
 int isPrime(int n) {
@@ -36,3 +37,4 @@ int isPrime(int n) {
 	return 1;
 	
 }
+
