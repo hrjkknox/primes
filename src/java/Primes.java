@@ -1,5 +1,6 @@
 import java.lang.Math;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Primes {
 	public static boolean isPrime(int n) {
@@ -24,7 +25,7 @@ public class Primes {
 		 */
 		
 		double decimalH = Math.sqrt(n);
-		int h = Math.round(decimalH);
+		int h = (int) Math.round(decimalH);
 
 		int i = 5;
 		while (i <= h) {
