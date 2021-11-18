@@ -40,6 +40,16 @@ public class Primes {
 		return true;
 	}
 
-	
+	public static ArrayList<Integer> getPrimesFromRange(int min, int max) {
+		/* We have to use an arrayList, as the number of primes can't be predicted */
+		ArrayList<Integer> output = new ArrayList<Integer>();
+		
+		for (int i = min; i <= max; i++) {
+			if (isPrime(i)) {
+				output.add(i);
+			}
+		}
+		return output;
+	}
 
 }
