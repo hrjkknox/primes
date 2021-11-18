@@ -23,7 +23,7 @@ public class Primes {
 		 * i, i+2 for being prime, then loop by 6
 		 */
 		
-		float decimalH = Math.sqrt(n);
+		double decimalH = Math.sqrt(n);
 		int h = Math.round(decimalH);
 
 		int i = 5;
