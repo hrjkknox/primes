@@ -1,6 +1,5 @@
 import java.lang.Math;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Primes {
 	public static boolean isPrime(int n) {
