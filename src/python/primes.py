@@ -38,3 +38,47 @@ def getPrimesFromRange(min, max):
 # (this is the only way I've figured out so far to make it parallel-able)
 def p_getPrimesFromRange(p):
 	return getPrimesFromRange(p[0], p[1])
+
+# Creates a list of ranges for each process to use
+def getRanges(min, max):
+	# The max number of cores we can use
+	noOfProcessors = mp.cpu_count()
+	# The number of numbers we have to process
+	noOfNumbers = max - min + 1
+	# The size of chunk each core has to process
+	# (if it doesn't divide equally, one core will have to do slightly more)
+	chunkSize = round(noOfNumbers / noOfProcessors)
+
+	# The data to be output
+	ranges = []
+
+	# Turn the chunk size into an array of ranges
+	i = min
+	j = min + math.floor(chunkSize)
+	while i <= max:
+		ranges.append([i, j-1])
+		i += math.floor(chunkSize)
+		j += math.floor(chunkSize)
+
+	# Make sure we dont process any more or less than we need to
+	ranges[-1][1] = max
+
+	return ranges
+		
+# Divides the workload of finding primes, and finds them
+def findPrimesInParallel(min, max):
+	ranges = getRanges(min, max)
+	
+	pool = mp.Pool()
+	# Spawn an adequate number of processes
+	pool = mp.Pool(processes=len(ranges))
+	# Map the functions to the processes
+	results = pool.map(p_getPrimesFromRange, ranges)
+	output = []
+	# Loop through the processes and combine their outputs
+	for i in results:
+		output += i
+	return output
+
+if __name__ == "__main__":
+	print(findPrimesInParallel(1, 100))
