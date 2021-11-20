@@ -1,3 +1,6 @@
+import multiprocessing as mp
+import math
+
 def isPrime(n):
 	# Easy results
 	if (n == 2) or (n == 3):
@@ -31,3 +34,7 @@ def getPrimesFromRange(min, max):
 			output.append(i)
 	return output
 
+# A version of getPrimesFromRange with a single argument
+# (this is the only way I've figured out so far to make it parallel-able)
+def p_getPrimesFromRange(p):
+	return getPrimesFromRange(p[0], p[1])
